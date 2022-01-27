@@ -9,7 +9,19 @@
     Bild austauschen :: 
 */
 
-/***  Ablaufsteuerung | Control */  
+/***  Ablaufsteuerung | Control */
+// Modul. Ablaufsteuerung | Test:
+controller()  
+function controller(){
+    output(updateImg(checkAge(getImput())));
+}
+
+/** Eingabe | Check auf Datenintehrität */
+//4. Modul: Eingabe
+function getImput() {
+    return 15;
+    
+}
 
 /** Business-Logic */
 //3. Modul: Business-Logic (Mapping) | Test:
