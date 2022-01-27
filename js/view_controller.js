@@ -11,17 +11,52 @@
 
 /***  Ablaufsteuerung | Control */
 // Modul. Ablaufsteuerung | Test:
-controller()  
+// controller()  
 function controller(){
     output(updateImg(checkAge(getImput())));
 }
 
-/** Eingabe | Check auf Datenintehrität */
-//4. Modul: Eingabe
-function getImput() {
-    return 5;
+// 5a. Trigger - BtnClick
+const btn = document.getElementById("trigBtn");
+btn.addEventListener("click",actOnClick);
+
+// 5b. Event-Dispatcher
+function actOnClick() {
+    controller();
     
 }
+
+/** Eingabe | Check auf Datenintehrität */
+
+//4. Definition : Eingabefeld
+const field = document.getElementsByName("eingabe")[0];
+
+//4a. Modul: Eingabe
+function getImput() {
+    return parseInt(field.value);
+}
+
+//4b. Trigger-Input
+field.addEventListener("input",isInputValid);
+
+//4c. Check auf korrekte Eingaben...
+function isInputValid() {
+
+    let inputStr = field.value;
+    let cond = false; //???
+    if (!cond) {
+        field.value = "";
+        updateImg(data.default.bev);
+    }
+        
+    
+    return true;
+    
+}
+
+
+
+
 
 /** Business-Logic */
 //3. Modul: Business-Logic (Mapping) | Test:
